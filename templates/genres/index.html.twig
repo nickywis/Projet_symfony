@@ -1,0 +1,25 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Liste de Genres{% endblock %}
+
+{% block body %}
+
+
+
+<a href="{{ url('genres_create') }}">Nouveau Genre</a>
+
+<div>
+    {% for genre in genres %}
+        <h2>#{{ genre.id }} : {{ genre.nom }}</h2>
+        <a href="{{ url('genres_edit',{ 'id':genre.id }) }}">Editer</a>
+        <br/>
+        {% if genre.films|length == 0 %}
+        {% endif %}
+        
+        
+         <a href="{{ url('genres_delete',{ 'id':genre.id }) }}">Supprimer</a>
+        <hr />
+    {% endfor %}
+</div>
+
+{% endblock %}

@@ -1,0 +1,54 @@
+
+{% block title %}Création de films{% endblock %}
+
+{% block body %}
+<form method="POST">
+
+<p>
+    <label for="titre">
+        Titre
+    </label>
+    <input type="text" name="titre" id="titre" />
+</p>
+
+<p>
+    <label for="resume">
+    Resume
+    </label>
+    <textarea name="resume" id="resume"></textarea>
+</p>
+
+<p>
+
+<label for="annee_sortie">
+    Annee de sortie
+</label>
+
+<input type="number" min="1900" max="2021" step="1" name="annee_sortie" id="annee_sortie" />
+
+</p>
+
+<p>
+
+<label for="genre">
+    Genre
+</label>
+
+<select  name="genre" id="genre">
+    {% for genre in genres %}
+        <option value="{{ genre.id }}">{{ genre.nom }}</option>
+    {% endfor %}
+   
+</select>
+
+</p>
+
+
+
+<p> 
+    <button type="submit">
+        Enregistrer
+    </button>
+</p>
+</form>
+{% endblock %}

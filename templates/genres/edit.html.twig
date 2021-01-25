@@ -1,0 +1,26 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Edition du genre #{{genre.id}}{% endblock %}
+
+{% block body %}
+<form method="POST">
+
+<p>
+
+<label for="nom">
+    Nom
+</label>
+
+<input type="text" name="nom" id="nom" value="{{ genre.nom }}"/>
+
+</p>
+
+<p>
+
+<button type="submit">
+Enregistrer
+</button>
+
+</p>
+</form>
+{% endblock %}

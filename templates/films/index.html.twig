@@ -1,0 +1,29 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello FilmsController!{% endblock %}
+
+{% block body %}
+
+
+
+<a href="{{ url('films_create') }}">Nouveau Film</a>
+<a href="{{ url('genres_create') }}">Nouveau Genre</a>
+<a href="{{ url('acteurs_create') }}">Nouvel Acteur</a>
+
+<div>
+    {% for film in films %}
+        <h2>#{{ film.id }} : {{ film.titre }}</h2>
+        <h3>sortie : {{ film.anneeSortie }}</h3>
+
+        {% if film.genre is not null %}
+        <h3>Genre : {{ film.genre.nom }}</h3>
+        {% endif %}
+        <p>{{ film.resume }}</p>
+        <hr />
+
+
+
+    {% endfor %}
+</div>
+
+{% endblock %}
